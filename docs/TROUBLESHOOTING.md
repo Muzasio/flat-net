@@ -83,7 +83,7 @@ systemctl --user stop app-flatpak-com.google.Chrome-1234567890.scope
 6. **Offline (sandbox) cannot be switched on while an app runs.** Restart needed.
 7. **Data already sent cannot be taken back.** Deleting a profile removes local data only. Anything sent before the block (logins, sync) stays with that service.
 8. **Data counters reset** if FlatNet restarts. Counters are kept in memory only.
-9. **Firewall part never tested live with a password during this project.** Use SETUP.md Step 7 on each PC.
+9. **Only Cut was tested live** (Chrome, CachyOS). LAN only, switching back to Online and the counters were not. Use SETUP.md Step 7 on each PC.
 
 ## Things that were seen during the project
 

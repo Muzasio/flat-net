@@ -67,7 +67,10 @@ User asked to check for security, bugs, logic and flow problems. Found 11 proble
 ## Stage 10: Documentation
 This folder.
 
+## Stage 11: Live Cut test
+The user tested by hand: Chrome temp profile, logged in to a website, **Cut** (internet off), **Delete**, then a new start was a fresh profile. See 04-testing.md, test 6. Exact time not recorded.
+
 ## What was never done
-- The firewall part was never tested live with a password (user rejected the test in Stage 5; no later test was recorded).
+- LAN only, switching back to Online after a Cut, and the counters were never tested live (Cut was, in Stage 11).
 - No other distro was tested.
 - Falkon was not opened as a full window with a redirected profile; only its environment redirect was checked.

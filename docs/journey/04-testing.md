@@ -65,11 +65,19 @@ Result: `shared=ipc;` (no `network`), which proved how to detect offline instanc
 ### 5. Default setting test
 Called `set_default('Chrome', 'LAN only')`, read `defaults.json` (`{"Chrome": "lan"}`), switched the App dropdown to Falkon (Network showed `Online`). Then deleted `defaults.json` to reset.
 
-### 6. Cleanup after tests
+### 6. Live Cut test (by the user, 2026-10-13)
+Done by hand on the main PC, after the code was finished (exact time not recorded):
+1. Started Chrome with a new temp profile and logged in to a website.
+2. Clicked **Cut** for it and typed the password. Result: the internet in that Chrome was off.
+3. Deleted the profile. Started Chrome again with a new temp profile. Result: it started fresh (not logged in).
+
+Not part of this test: LAN only, switching back to Online after a Cut, Sent/Received counters.
+
+### 7. Cleanup after tests
 After each test: removed `profiles/_test`, checked `flatpak ps` for leftovers. One leftover headless Firefox was found and stopped with `systemctl --user stop app-flatpak-org.mozilla.firefox-<n>.scope`. Checked its command line first to make sure it was the test copy and not the user's Firefox.
 
 ## Tests that were NOT run
-- **Live firewall test** (Cut, LAN only, counters). A test was prepared: one password prompt, apply a cut, move a small Python test process into the app's cgroup, try to connect to `1.1.1.1:443`, compare with a normal process, then remove the rule. The user rejected this test. Use SETUP.md Step 7 instead.
+- **Live test of LAN only, switching back to Online, and the counters.** An automatic firewall test was prepared during development (one password prompt, apply a cut, move a small Python test process into the app's cgroup, try to connect to `1.1.1.1:443`, compare with a normal process, then remove the rule). The user rejected it, and later tested Cut by hand instead (test 6). Use SETUP.md Step 7 for the rest.
 - Older Python, older kernels, other distros.
 - Received counters on the input chain.
 

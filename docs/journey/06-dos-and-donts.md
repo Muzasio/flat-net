@@ -37,6 +37,6 @@ Learned from this project.
 - **Don't** run `rm -rf` on a path you did not check first (the program checks the path came from its own `profiles/` listing).
 - **Don't** show "Cut" or "Offline" unless the firewall accepted it.
 - **Don't** ask for a password every few seconds. Use one long-running helper.
-- **Don't** claim something works if it was not tested. Say "not tested" (the live firewall test in this project).
+- **Don't** claim something works if it was not tested. Say "not tested" (the live firewall test in this project, until Cut was tested by hand).
 - **Don't** pick a big GUI toolkit if the program must run on old distros. Tkinter is enough for buttons and tables.
 - **Don't** leave old versions lying around. `chrome-temp` was removed once FlatNet replaced it.
