@@ -1,0 +1,6 @@
+{
+  "Chrome":      {"id": "com.google.Chrome",           "args": ["--no-first-run", "--no-default-browser-check"]},
+  "Firefox":     {"id": "org.mozilla.firefox",         "args": ["--no-remote"]},
+  "Falkon":      {"id": "org.kde.falkon",              "args": ["--no-remote"]},
+  "LibreOffice": {"id": "org.libreoffice.LibreOffice", "args": ["-env:UserInstallation={url}/lo"]}
+}
