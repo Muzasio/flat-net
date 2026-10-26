@@ -1,0 +1,19 @@
+# Made by FlatNet on each machine: local state and personal app data, never published
+profiles/
+state.json
+defaults.json
+.lock
+__pycache__/
+
+# Build, environment and docmap viewer files
+*.pyc
+.venv/
+.env
+settings.json
+*.local.json
+docs/viewer/facts.json
+docs/viewer/coverage.md
+docs/viewer/layout.json
+docs/viewer/settings.json
+docs/viewer/research/
+docs/viewer/docmap/.deps/

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="%CSP%">
+<title>docmap</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="bar">
+  <strong id="project"></strong>
+  <nav id="views"></nav>
+  <div class="find"><input id="search" placeholder="Find a function, file, term..." autocomplete="off"><div id="results"></div></div>
+  <span id="check" class="badge"></span>
+  <button id="edit" title="Move boxes, group them, add your own labels, notes and links. Saved in layout.json.">Edit layout</button>
+  <button id="rescan" title="Read the project again">Rescan</button>
+  <label class="switch" title="Internet for this window. Off: only local project files load."><input type="checkbox" id="internet"> Internet</label>
+</header>
+<main>
+  <section id="left">
+    <div id="canvas"><svg id="svg"><defs>
+      <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z"/></marker>
+    </defs><g id="world"></g></svg>
+      <div id="coverage" hidden></div>
+      <div id="legend"></div>
+      <div id="zoom"><button data-z="in">+</button><button data-z="out">&minus;</button><button data-z="fit">Fit</button></div>
+    </div>
+    <div id="details"><p class="hint">Click a box to see where it is, what it uses, and which docs explain it.</p></div>
+  </section>
+  <div id="split"></div>
+  <section id="right">
+    <div id="tabs"></div>
+    <div id="tabbar"><span id="tabpath"></span><button id="external" disabled>Open in default app</button></div>
+    <div id="pages"><p class="hint">Files you open appear here as tabs, with line numbers.</p></div>
+  </section>
+</main>
+<div id="toast"></div>
+<div id="modal" hidden></div>
+<script>window.BOOT = %BOOT%;</script>
+<script src="app.js"></script>
+</body>
+</html>

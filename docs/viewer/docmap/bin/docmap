@@ -1,0 +1,11 @@
+#!/bin/sh
+# docmap launcher. Finds docmap.py next to itself, so no path is written in here.
+#   docmap                  open the window for the current folder
+#   docmap <folder>         open the window for that folder
+#   docmap scan|setup ...   other docmap commands, passed through
+# Install once (from the docmap folder):  ln -s "$PWD/bin/docmap" ~/.local/bin/docmap
+DOCMAP="$(dirname "$(dirname "$(readlink -f "$0")")")/docmap.py"
+case "$1" in
+  scan|setup|view|-h|--help) exec python3 "$DOCMAP" "$@" ;;
+  *) exec python3 "$DOCMAP" view "${1:-.}" ;;
+esac
