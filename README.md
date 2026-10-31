@@ -8,9 +8,6 @@
 ![Firewall: nftables](https://img.shields.io/badge/firewall-nftables-informational)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 
-> [!NOTE]
-> **Cut has been tested live; LAN only and the data counters not yet.** Cut stopped a running Chrome profile's internet on CachyOS. Run [SETUP.md, Step 7](docs/SETUP.md#step-7-test-that-the-firewall-works) once on your PC before relying on a block. Test results and bug reports are welcome in Issues.
-
 ## What is FlatNet?
 
 Flatpak lets you turn an app's network on or off, but only when the app starts, and only for the whole app. FlatNet adds two things:
@@ -49,8 +46,6 @@ flowchart LR
     C --> D["Root helper (pkexec)<br/>rebuilds nft table<br/>inet flatnet"]
     D --> E["Kernel firewall<br/>matches the app's cgroup"]
 ```
-
-Each Flatpak run gets its own cgroup scope. FlatNet points nftables rules at that scope, so only that app is affected. The whole table is rebuilt on each change, so it never holds stale rules. Profiles work by redirecting the app's config, data, cache and state folders into the profile's `data/` folder.
 
 ## Quick start
 
@@ -98,7 +93,7 @@ The full list, with fixes: [TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md).
 
 FlatNet is usable today for profiles, Cut and Offline (sandbox). LAN only and the data counters still need their first live test.
 
-**Done**
+**Working**
 - Internet control (Online, LAN only, Cut) for any running Flatpak app, with blocks per app or per profile
 - Throwaway and kept profiles for Chrome, Firefox, Falkon and LibreOffice, extendable through `apps.json`
 - Offline (sandbox) mode, Always offline override, default network per app, data counters
