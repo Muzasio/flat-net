@@ -17,3 +17,7 @@ docs/viewer/layout.json
 docs/viewer/settings.json
 docs/viewer/research/
 docs/viewer/docmap/.deps/
+
+# Docs stay local; only the README screenshot folder is uploaded
+/docs/*
+!/docs/images/
